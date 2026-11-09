@@ -27,3 +27,6 @@ nav ul {
     align-items: center;
     gap: 15px;
 }
+main {
+    margin: 40px 0px;
+}
