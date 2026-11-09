@@ -24,6 +24,9 @@
                     <a href="/about">About</a>
                 </li>
                 <li>
+                    <a href="/add-user">Add User</a>
+                </li>
+                <li>
                     <a href="/contact">Contact</a>
                 </li>
             </ul>
