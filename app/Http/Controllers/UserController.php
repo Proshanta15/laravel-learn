@@ -8,13 +8,13 @@ class UserController extends Controller
 {
     //
     function addUser(Request $request){
+          return $request;
+    //    $username = $request->input('username');
+    //    $email = $request->input('email');
+    //    $phone = $request->input('phone');
 
-       $username = $request->input('username');
-       $email = $request->input('email');
-       $phone = $request->input('phone');
-
-       return "Name: " . $username .
-               "<br>Email: " . $email .
-               "<br>Phone: " . $phone;
+    //    return "Name: " . $username .
+    //            "<br>Email: " . $email .
+    //            "<br>Phone: " . $phone;
     }
 }
