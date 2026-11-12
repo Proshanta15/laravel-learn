@@ -12,6 +12,8 @@ class UserController extends Controller
         $request->validate([
             "username"=>"required | min:3 | max:20",
             "email"=>"required"
+        ],[
+            "username.required" => "Username field can not empty"
         ]);
 
           return $request;
