@@ -14,3 +14,15 @@ Route::view('form','user');
 // Route::get('/delete',[UserController::class, 'delete']);
 
 Route::get('/',[StudentController::class,'index']);
+
+Route::get('login',function(){
+    return view('login');
+});
+
+Route::post('login',[UserController::class,'login']);
+
+Route::get('profile', function(){
+    return view('profile');
+});
+
+Route::get('logout',[UserController::class,'logout']);
