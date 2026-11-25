@@ -33,7 +33,36 @@ class EmployeeController extends Controller
 
     function show()
     {
-        $data = Employee::all();
+        $data = Employee::paginate(10);
+        return view('show-employees', ["employees" => $data]);
+    }
+
+    function delete($id)
+    {
+        Employee::find($id)->delete();
+        return redirect('show-employee');
+    }
+
+    function update($id)
+    {
+        $data = Employee::find($id);
+        return view('update-employee', ["emp" => $data]);
+    }
+
+    function updateDB(Request $req, $id)
+    {
+        Employee::find($id)->update([
+            "name" => $req->name,
+            "email" => $req->email,
+            "phone" => $req->phone,
+        ]);
+        return redirect('show-employee');
+    }
+
+    function search(Request $req)
+    {
+        $keyword = $req->query('search-name');
+        $data = Employee::where('name', 'like', "%{$keyword}%")->get();
         return view('show-employees', ["employees" => $data]);
     }
 }
